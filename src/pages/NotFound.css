@@ -1,0 +1,22 @@
+.notfound {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px;
+}
+.nf-code {
+  font-family: var(--mono);
+  font-size: 7rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.15;
+  line-height: 1;
+}
+.nf-title { font-family: var(--serif); font-size: 2rem; color: var(--heading); }
+.nf-desc  { color: var(--muted); max-width: 400px; line-height: 1.7; }

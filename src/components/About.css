@@ -1,0 +1,103 @@
+.about-section {
+  padding: 110px 0;
+  position: relative;
+  z-index: 1;
+}
+.about-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.about-text {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+.about-text p {
+  color: var(--text);
+  line-height: 1.9;
+  margin-bottom: 18px;
+  font-size: 0.94rem;
+}
+
+.about-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 34px;
+}
+.fact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: var(--muted);
+  padding: 10px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s;
+}
+.fact-item:hover { border-color: var(--accent); }
+.fact-item i { color: var(--accent); font-size: 0.82rem; flex-shrink: 0; }
+
+.about-right { display: flex; flex-direction: column; gap: 16px; }
+
+.exp-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.exp-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent), var(--accent2));
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.exp-card:hover { border-color: rgba(56,189,248,0.35); transform: translateX(4px); }
+.exp-card:hover::before { opacity: 1; }
+
+.exp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  gap: 12px;
+}
+.exp-role { font-weight: 600; font-size: 0.94rem; color: var(--heading); line-height: 1.3; }
+.exp-date {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  background: rgba(56,189,248,0.09);
+  padding: 3px 9px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.exp-company { font-size: 0.79rem; color: var(--accent2); margin-bottom: 10px; font-weight: 500; }
+.exp-desc { font-size: 0.81rem; color: var(--muted); line-height: 1.68; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 44px; }
+  .about-facts { grid-template-columns: 1fr; }
+  .about-text { position: static; }
+  .exp-card:hover { transform: translateY(-2px); }
+}

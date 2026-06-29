@@ -1,0 +1,126 @@
+.pg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.pg-thumb {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--card);
+  aspect-ratio: 16 / 10;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.pg-thumb:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.pg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.pg-img-loaded { opacity: 1; }
+.pg-thumb:hover .pg-img-loaded { transform: scale(1.04); }
+
+.pg-skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, var(--bg2) 30%, var(--bg3) 50%, var(--bg2) 70%);
+  background-size: 200% 100%;
+  animation: pg-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes pg-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.pg-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  background: var(--bg2);
+}
+.pg-placeholder i { font-size: 1.6rem; opacity: 0.6; }
+
+.pg-thumb-label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(10, 14, 23, 0.72);
+  color: #fff;
+  font-size: 0.72rem;
+  padding: 4px 9px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-skeleton { animation: none; }
+}
+
+/* ─── Lightbox ─── */
+.pg-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(5, 8, 14, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  cursor: zoom-out;
+}
+
+.pg-lightbox-img {
+  max-width: min(92vw, 1100px);
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+
+.pg-lightbox-caption {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  margin-top: 16px;
+}
+
+.pg-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.pg-lightbox-close:hover { background: rgba(255, 255, 255, 0.1); }
+.pg-lightbox-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

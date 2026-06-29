@@ -1,0 +1,94 @@
+.exp-page { padding: 120px 0 80px; min-height: 100vh; }
+.exp-sub-heading {
+  font-family: var(--sans); font-size: 1.1rem; font-weight: 700;
+  color: var(--heading); margin-bottom: 28px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+.exp-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-bottom: 24px; }
+.exp-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 24px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.exp-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.exp-card-top { display: flex; align-items: flex-start; gap: 16px; }
+.exp-icon {
+  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.1rem;
+}
+.exp-role { font-weight: 700; color: var(--heading); font-size: 0.95rem; }
+.exp-company { color: var(--muted); font-size: 0.83rem; margin-top: 3px; }
+.exp-type-badge {
+  margin-left: auto; font-size: 0.68rem; padding: 3px 10px; border-radius: 20px;
+  font-weight: 600; white-space: nowrap; flex-shrink: 0;
+}
+.exp-type-internship { background: rgba(52,211,153,0.12); color: #34d399; }
+.exp-type-freelance  { background: rgba(251,191,36,0.12);  color: #fbbf24; }
+.exp-type-opensource { background: rgba(129,140,248,0.12); color: #818cf8; }
+.exp-period { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); }
+.exp-desc { color: var(--text); font-size: 0.88rem; line-height: 1.7; }
+.exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.exp-tag {
+  background: var(--bg2); border: 1px solid var(--border);
+  color: var(--muted); font-size: 0.7rem; padding: 3px 9px; border-radius: 20px;
+}
+
+/* TIMELINE */
+.exp-timeline {
+  position: relative; padding: 20px 0; margin-bottom: 48px;
+}
+.tl-line {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+}
+.tl-item { display: flex; margin-bottom: 40px; position: relative; z-index: 1; }
+.tl-item.left  { justify-content: flex-end; padding-right: calc(50% + 40px); }
+.tl-item.right { justify-content: flex-start; padding-left: calc(50% + 40px); }
+.tl-content { max-width: 340px; width: 100%; }
+.tl-year {
+  font-family: var(--mono); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 2px; margin-bottom: 8px;
+}
+.tl-icon-wrap {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 0.9rem; top: 0;
+}
+.tl-body {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 18px;
+  transition: border-color 0.2s;
+}
+.tl-body:hover { border-color: var(--accent); }
+.tl-title { font-weight: 700; color: var(--heading); font-size: 0.92rem; margin-bottom: 6px; }
+.tl-desc { color: var(--muted); font-size: 0.84rem; line-height: 1.6; }
+
+/* OPEN CARD */
+.open-card {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  background: linear-gradient(135deg, rgba(56,189,248,0.05), rgba(129,140,248,0.05));
+  border: 1px solid var(--accent); border-radius: 14px; padding: 28px;
+}
+.open-dot {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--accent3);
+  box-shadow: 0 0 12px var(--accent3); animation: pulse 1.5s ease-in-out infinite; flex-shrink: 0;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+.open-title { font-weight: 700; color: var(--heading); font-size: 1rem; }
+.open-sub   { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+.open-card .btn-primary { margin-left: auto; }
+
+@media (max-width: 800px) {
+  .tl-line { left: 20px; }
+  .tl-item.left, .tl-item.right { justify-content: flex-start; padding-left: 56px; padding-right: 0; }
+  .tl-icon-wrap { left: 2px; transform: none; }
+}
+@media (max-width: 600px) {
+  .exp-cards-grid { grid-template-columns: 1fr; }
+  .open-card .btn-primary { margin-left: 0; }
+}

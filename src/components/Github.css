@@ -1,0 +1,82 @@
+.github-section { padding: 100px 0; position: relative; z-index: 1; }
+
+/* Live stats row */
+.gh-live-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 36px;
+  padding: 22px 26px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+}
+.gh-live-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 0 20px;
+  border-right: 1px solid var(--border);
+}
+.gh-live-item:last-child { border-right: none; }
+.gh-live-item i { color: var(--accent); font-size: 0.85rem; margin-bottom: 4px; }
+.gh-live-num { font-family: var(--serif); font-size: 1.4rem; color: var(--heading); font-weight: 700; }
+.gh-live-label { font-family: var(--mono); font-size: 0.66rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+/* Skeleton loaders */
+.gh-skel-row { display: flex; gap: 20px; width: 100%; }
+.gh-skel-item { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.gh-skel-bar { background: var(--border); border-radius: 4px; animation: skel-pulse 1.5s infinite; }
+.gh-skel-num { height: 28px; }
+.gh-skel-bar:last-child { height: 12px; }
+@keyframes skel-pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+.gh-loading { color: var(--muted); font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
+.gh-loading i { color: var(--accent4); }
+
+/* Stat cards */
+.github-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.gh-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: all 0.25s ease;
+}
+.gh-card:hover { border-color: rgba(56,189,248,0.35); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.gh-card img { display: block; max-width: 100%; height: auto; }
+
+/* Contribution graph */
+.gh-contrib {
+  margin: 20px 0 28px;
+  padding: 22px 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow-x: auto;
+}
+.gh-contrib-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gh-contrib img { max-width: 100%; border-radius: 6px; }
+
+.gh-cta { text-align: center; margin-top: 8px; }
+
+@media (max-width: 600px) {
+  .gh-live-item { padding: 0 12px; }
+  .gh-live-num { font-size: 1.1rem; }
+}

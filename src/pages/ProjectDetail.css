@@ -1,0 +1,221 @@
+/* ─── Page Layout ─── */
+.pd-page { padding: 120px 0 80px; min-height: 100vh; }
+.pd-not-found { padding: 160px 40px; text-align: center; }
+
+/* ─── Back Link ─── */
+.pd-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--muted); font-size: 0.85rem; text-decoration: none;
+  font-family: var(--mono); letter-spacing: 1px;
+  margin-bottom: 32px; transition: color 0.2s;
+}
+.pd-back:hover { color: var(--accent); }
+
+/* ─── Header Card ─── */
+.pd-header {
+  display: flex; gap: 28px; align-items: flex-start;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 36px; margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.pd-icon-wrap {
+  width: 72px; height: 72px; border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; color: #fff; flex-shrink: 0;
+}
+.pd-header-text { flex: 1; min-width: 200px; }
+.pd-category {
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 2px;
+  color: var(--accent); text-transform: uppercase;
+}
+.pd-title { font-family: var(--serif); font-size: 2rem; color: var(--heading); margin: 8px 0; line-height: 1.2; }
+.pd-short { color: var(--muted); font-size: 0.95rem; margin-bottom: 14px; }
+.pd-tech-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.pd-cta-btns { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; margin-left: auto; }
+.pd-btn { min-width: 140px; justify-content: center; }
+
+/* ─── Body ─── */
+.pd-body { display: flex; flex-direction: column; gap: 20px; }
+
+/* ─── Section Wrapper ─── */
+.pd-section {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 28px;
+}
+.pd-section-title {
+  font-family: var(--sans); font-size: 1rem; font-weight: 700;
+  color: var(--heading); margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.pd-section-title i { color: var(--accent); }
+
+/* ─── Chip ─── */
+.pd-chip {
+  background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.2);
+  color: var(--accent); font-size: 0.72rem; padding: 3px 10px;
+  border-radius: 20px; font-family: var(--mono);
+}
+
+/* ─── Prose paragraphs ─── */
+.pd-prose { color: var(--text); line-height: 1.85; font-size: 0.95rem; }
+
+/* ─── Screenshot gallery note ─── */
+.pd-gallery-note {
+  font-size: 0.8rem; color: var(--muted); font-family: var(--mono);
+  margin-bottom: 14px; display: flex; align-items: center; gap: 6px;
+  flex-wrap: wrap;
+}
+.pd-gallery-note i { color: var(--accent); }
+.pd-gallery-note code {
+  background: var(--bg2); border: 1px solid var(--border);
+  padding: 1px 6px; border-radius: 4px; font-size: 0.75rem;
+}
+
+/* ─── Architecture Table ─── */
+.pd-arch-table { display: flex; flex-direction: column; gap: 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+.pd-arch-row {
+  display: grid; grid-template-columns: 120px 200px 1fr;
+  gap: 16px; padding: 12px 16px; align-items: center;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.pd-arch-row:last-child { border-bottom: none; }
+.pd-arch-row:hover { background: var(--bg2); }
+.pd-arch-layer {
+  font-family: var(--mono); font-size: 0.75rem; font-weight: 600;
+  color: var(--accent2); letter-spacing: 0.5px;
+}
+.pd-arch-tech { display: flex; flex-wrap: wrap; gap: 4px; }
+.pd-arch-role { color: var(--text); font-size: 0.88rem; line-height: 1.5; }
+
+/* ─── Workflow Steps ─── */
+.pd-workflow { list-style: none; display: flex; flex-direction: column; gap: 12px; padding: 0; }
+.pd-workflow-step {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.pd-workflow-num {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff; font-size: 0.75rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.pd-workflow-text { color: var(--text); font-size: 0.9rem; line-height: 1.65; padding-top: 3px; }
+
+/* ─── API Flow Table ─── */
+.pd-api-table { display: flex; flex-direction: column; gap: 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+.pd-api-header {
+  display: grid; grid-template-columns: 80px 220px 1fr;
+  gap: 16px; padding: 10px 16px;
+  background: var(--bg2);
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 1px;
+  color: var(--muted); text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+.pd-api-row {
+  display: grid; grid-template-columns: 80px 220px 1fr;
+  gap: 16px; padding: 12px 16px; align-items: center;
+  border-bottom: 1px solid var(--border); transition: background 0.15s;
+}
+.pd-api-row:last-child { border-bottom: none; }
+.pd-api-row:hover { background: var(--bg2); }
+.pd-api-method {
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 700;
+  padding: 3px 8px; border-radius: 4px; text-align: center;
+}
+.pd-api-get    { background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
+.pd-api-post   { background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); }
+.pd-api-put    { background: rgba(251,191,36,0.12);  color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+.pd-api-delete { background: rgba(239,68,68,0.12);  color: #ef4444; border: 1px solid rgba(239,68,68,0.25); }
+.pd-api-endpoint {
+  font-family: var(--mono); font-size: 0.78rem;
+  color: var(--accent); background: var(--bg2);
+  padding: 2px 8px; border-radius: 4px;
+}
+.pd-api-desc { color: var(--text); font-size: 0.88rem; }
+
+/* ─── Database Design ─── */
+.pd-db-tables { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-bottom: 14px; }
+.pd-db-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px;
+}
+.pd-db-name {
+  font-family: var(--mono); font-size: 0.8rem; font-weight: 700;
+  color: var(--accent2); margin-bottom: 8px;
+  display: flex; align-items: center; gap: 6px;
+}
+.pd-db-cols { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); line-height: 1.7; }
+.pd-db-notes { color: var(--muted); font-size: 0.83rem; font-style: italic; line-height: 1.6; }
+
+/* ─── Folder Tree ─── */
+.pd-folder-tree {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 20px 24px;
+  font-family: var(--mono); font-size: 0.8rem;
+  color: var(--text); line-height: 1.8;
+  overflow-x: auto; white-space: pre;
+}
+
+/* ─── Features List ─── */
+.pd-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pd-feature-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  color: var(--text); font-size: 0.92rem; line-height: 1.6;
+}
+.pd-feature-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); margin-top: 7px; flex-shrink: 0;
+}
+
+/* ─── Tech Stack Grid ─── */
+.pd-stack-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.pd-stack-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px;
+}
+.pd-stack-cat {
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 1px;
+  color: var(--accent2); text-transform: uppercase; margin-bottom: 10px;
+}
+.pd-stack-tools { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ─── Challenges ─── */
+.pd-challenges {
+  background: var(--bg2); border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0; padding: 20px 24px; position: relative;
+}
+.pd-quote-icon { color: var(--accent); opacity: 0.3; font-size: 1.5rem; margin-bottom: 8px; display: block; }
+.pd-challenges p { color: var(--text); line-height: 1.8; font-size: 0.95rem; font-style: italic; }
+
+/* ─── Bullet List (Results / Lessons / Future) ─── */
+.pd-bullet-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pd-bullet-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  color: var(--text); font-size: 0.92rem; line-height: 1.6;
+}
+.pd-bullet-item i { color: var(--accent3); margin-top: 3px; flex-shrink: 0; font-size: 0.85rem; }
+
+/* ─── Bottom Links ─── */
+.pd-bottom-links { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; padding: 8px 0; }
+.pd-demo-note { color: var(--muted); font-size: 0.85rem; font-family: var(--mono); display: flex; align-items: center; gap: 6px; }
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .pd-arch-row { grid-template-columns: 100px 1fr; }
+  .pd-arch-role { grid-column: 1 / -1; padding-left: 0; }
+  .pd-api-header, .pd-api-row { grid-template-columns: 70px 160px 1fr; gap: 10px; }
+}
+
+@media (max-width: 700px) {
+  .pd-header { flex-direction: column; }
+  .pd-cta-btns { flex-direction: row; margin-left: 0; }
+  .pd-btn { min-width: auto; }
+  .pd-arch-row { grid-template-columns: 1fr; gap: 6px; padding: 12px; }
+  .pd-api-header { display: none; }
+  .pd-api-row { grid-template-columns: 70px 1fr; }
+  .pd-api-endpoint { grid-column: 1 / -1; }
+  .pd-api-desc { grid-column: 1 / -1; }
+  .pd-db-tables { grid-template-columns: 1fr; }
+}

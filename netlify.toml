@@ -1,0 +1,47 @@
+# netlify.toml
+# ─────────────────────────────────────────────────────────
+# Deploy target: https://sajlendrapandey.netlify.app
+#
+# Setup steps on Netlify:
+#   1. New site from Git → connect this repo
+#   2. Build settings below are picked up automatically from this file
+#   3. Site configuration → Environment variables → add:
+#        GROQ_API_KEY = your_real_groq_key   (from console.groq.com)
+#      Do NOT add a VITE_ prefix to this one.
+#   4. (Optional) Site configuration → Environment variables → add:
+#        VITE_GITHUB_TOKEN = your_github_personal_access_token
+#      (raises the GitHub API rate limit from 60 to 5000 req/hr)
+# ─────────────────────────────────────────────────────────
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Proxy /api/chat (what the frontend calls) to the Netlify Function.
+# This means src/components/AIAssistant.jsx needs NO code changes.
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/leetcode"
+  to = "/.netlify/functions/leetcode"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/gfg"
+  to = "/.netlify/functions/gfg"
+  status = 200
+  force = true
+
+# SPA fallback: React Router handles routes like /projects/:id client-side.
+# Without this, refreshing on any non-root route returns Netlify's 404 page.
+# This must come AFTER the /api/chat redirect above.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

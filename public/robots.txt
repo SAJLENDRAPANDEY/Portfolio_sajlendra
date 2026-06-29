@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sajlendrapandey.netlify.app/sitemap.xml
